@@ -68,13 +68,13 @@
         }
 
 
-        $total_day_sql = "SELECT COUNT(attendance_date) FROM attendance";
+        $total_day_sql = "SELECT COUNT(DISTINCT(attendance_date)) FROM attendance";
         $total_day_query = mysqli_query($conn, $total_day_sql);
         $total_day_check = mysqli_num_rows($total_day_query);
 
         while ($total_day_row = $total_day_query->fetch_assoc()) {
             
-            $total_day_count[] = $total_day_row['COUNT(attendance_date)'];
+            $total_day_count[] = $total_day_row['COUNT(DISTINCT(attendance_date))'];
 
         }
 
@@ -100,7 +100,7 @@
         echo        "<td class='py-4 px-6 uppercase'>". $late ."</td>";
         echo        "<td class='py-4 px-6 uppercase'>". $half_day ."</td>";
         echo        "<td class='py-4 px-6 uppercase'>". $total_day ."</td>";
-        echo        "<td class='py-4 px-6 uppercase'>". $percentage ."%</td>";
+        echo        "<td class='py-4 px-6 uppercase'>". floor($percentage) ."%</td>";
         echo        "<td class='py-4 px-6 uppercase></td>";
         echo    "</tr>";
 
