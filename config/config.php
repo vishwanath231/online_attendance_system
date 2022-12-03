@@ -3,7 +3,7 @@
     $DB_HOST = "localhost";
     $DB_USERNAME = "root";
     $DB_PASSWORD = "root";
-    $DB_NAME = "vishwanath";
+    $DB_NAME = "attendance_system";
 
     $conn = mysqli_connect(
         $DB_HOST,
