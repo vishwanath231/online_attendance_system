@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Sen', sans-serif;
+    overflow: hidden;
+}
+
+button,
+input{
+    font-family: 'Sen', sans-serif;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+}
+
+.container__box{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.login_img img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.form_container {
+    margin: 30px auto;
+    min-height: 100vh;
+}
+
+.role_form{
+    margin-bottom: 2rem;
+    padding: 1rem;
+    height: fit-content;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, 
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.role_form p {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+#role_form{
+    display: flex;
+    align-items: center;
+}
+.role_form_div{
+    display: flex;
+    margin-right: 15px;
+}
+.role_form_div input{
+    margin-right: 3px;
+}
+
+.form__box {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 1rem;
+    height: fit-content;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, 
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.form__box h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.form__div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.form__div label{
+    margin-bottom: .7rem;
+}
+.form__div label span{
+   color: crimson;
+}
+
+.form__div input {
+    padding: .7rem;
+    border-radius: 5px;
+    border: 2px solid #dbdbdb;
+}
+
+
+
+.login_btn {
+    width: 100%;
+    background-color: cornflowerblue;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    padding: .7rem;
+    cursor: pointer;
+}
+
+.login_link{
+    margin-top: 1.5rem;
+}
+
+
+.errMsg {
+    background-color: #F8D7DA;
+    color: #9D1C24;
+    padding: .7rem;
+    margin-bottom: .5rem;
+    border-radius: 3px;
+}
+
+.sucMsg {
+    background: #D4EDDA;
+    color: #525759;
+    padding: .7rem;
+    margin-bottom: .5rem;
+    border-radius: 3px;
+}
+
+
+
+
+
+#admin_login{
+    display: none;
+}
+#admin_login.active{
+    display: block;
+}
+
+#teacher_login{
+    display: none;
+}
+#teacher_login.active{
+    display: block;
+}
+
+#student_login{
+    display: none;
+}
+#student_login.active{
+    display: block;
+}
+
+
+#admin_err_msg{
+    display: none;
+}
+
+#admin_err_msg.active{
+    display: block;
+}
+
+#teacher_err_msg{
+    display: none;
+}
+
+#teacher_err_msg.active{
+    display: block;
+}
+
+#student_err_msg{
+    display: none;
+}
+
+#student_err_msg.active{
+    display: block;
+}
+
+.info{
+    margin-top: 1rem;
+}
+.info h2{
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: .3rem;
+    color: #9D1C24;
+}
+
+.info_div{
+    margin-bottom: .7rem;
+}
+
+.info_div span{
+    font-weight: 600;
+}

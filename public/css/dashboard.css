@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.std_container{
+    position: relative;
+    width: 100%;
+}
+
+
+.std_container #student__details_model{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: rgba(0,0,0,0.5);
+    
+}
+
+.std_container #student__details_model.active{
+    display: block;
+    z-index: 999;
+    
+}
+
+
+#student__details_model .model__box{
+    max-width: 450px;
+    height: fit-content;
+    margin: 13rem auto;
+    padding: 1rem;
+    border-radius: 5px;
+    z-index: 99;
+    background-color: #fdfdfd;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+
+
+.std_container #admin_profile_box,
+.std_container #teacher_profile_box,
+.std_container #student_profile_box{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 999;
+}
+.std_container #admin_profile_box.active,
+.std_container #teacher_profile_box.active,
+.std_container #student_profile_box.active{
+    display: block;
+}
+
+#admin_profile_info,
+#teacher_profile_info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+    margin-right: 20px;
+}
+
+#student_profile_info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+    margin-right: 70px;
+}
