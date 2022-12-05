@@ -7,7 +7,7 @@
     $sql = "SELECT * FROM attendance WHERE student_id = '$id'";
     $query = mysqli_query($conn, $sql);
     $count = mysqli_num_rows($query);
-
+   
 
     if ($count > 0) {
 
@@ -46,8 +46,6 @@
         $late_check = mysqli_num_rows($late_query);
 
         while ($late_row = $late_query->fetch_assoc()) {
-
-            $late_num[] = $late_row['COUNT(status)'];
             
             $late_count[] = $late_row['COUNT(status)'] * 0.7;
         }
@@ -58,8 +56,6 @@
 
         while ($half_day_row = $half_day_query->fetch_assoc()) {
             
-            $half_day_num[] = $half_day_row['COUNT(status)'];
-
             $half_day_count[] = $half_day_row['COUNT(status)'] * 0.5;
 
         }
@@ -75,8 +71,6 @@
 
         }
 
-        $late_number = implode($late_num);
-        $half_day_number = implode($half_day_num);
 
         $student_name = implode($name);
         $student_reg_no = implode($reg_no);
@@ -91,17 +85,7 @@
         $percentage = ($working_days / intval($total_day)) * 100;
 
 
-        echo    "<tr class='bg-white border-b hover:bg-gray-200'>";
-        echo        "<td class='py-4 px-6 uppercase'>$student_name</td>";
-        echo        "<td class='py-4 px-6 uppercase font-bold'>". $student_reg_no ."</td>";
-        echo        "<td class='py-4 px-6 uppercase'>". $present ."</td>";
-        echo        "<td class='py-4 px-6 uppercase'>". $absent ."</td>";
-        echo        "<td class='py-4 px-6 uppercase'>". $late_number ."</td>";
-        echo        "<td class='py-4 px-6 uppercase'>". $half_day_number ."</td>";
-        echo        "<td class='py-4 px-6 uppercase'>". $total_day ."</td>";
-        echo        "<td class='py-4 px-6 uppercase'>". floor($percentage) ."%</td>";
-        echo        "<td class='py-4 px-6 uppercase></td>";
-        echo    "</tr>";
+        echo  $percentage;
 
     }
 
