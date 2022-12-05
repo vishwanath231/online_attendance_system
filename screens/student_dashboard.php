@@ -9,18 +9,22 @@
     <link rel="shortcut icon" href="../public/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../public/css/dashboard.css?<?php echo time(); ?>">
     <style>
-        #student_attendance{
+        #student_attendance,
+        #downloadPdf{
             display: none;
         }
 
-        #student_attendance.active{
+        #student_attendance.active,
+        #downloadPdf.active{
             display: block;
         }
     </style>
 </head>
-<body style="font-family: 'Sen', sans-serif ;  ">
+<body style="font-family: 'Sen', sans-serif;">
 
     <div class="std_container">
+
+        
 
         <nav class="bg-white p-4 shadow-md dark:">
             <div class="flex justify-between items-center my-0 mx-auto" style="max-width: 1424px;">
@@ -34,10 +38,20 @@
 
         <div id="student_profile_box" ></div>
 
+       
+
         <div class="max-w-screen-xl my-0 mx-auto px-4 ">
-            <h1 class="text-3xl font-bold uppercase my-10">
+            <h1 class="text-3xl font-bold uppercase my-5">
                 Attendance Dashboard
             </h1>
+            <p class="text-red-400">Your attendance percentage must be above 70% to download the Hall ticket</p>
+            <div class="flex justify-between items-center mb-5">
+                <p></p>
+                <form action="../controllers/pdf_view.php" method="POST" target="_blank">
+                    <input type="hidden" name="student_hidden_id" id="student_hidden_id">
+                    <button type="submit" name="downloadPdf" id="downloadPdf" class="p-2 rounded bg-green-300" >Hall Ticket</button>
+                </form>
+            </div>
 
             <div class="overflow-x-auto overflow-y-auto relative shadow-md sm:rounded-lg " >
                 <table class="w-full text-sm text-left text-gray-700">
@@ -142,7 +156,7 @@
             
         })
 
-
+      
 
         student_profile.addEventListener('click', () => {
             student_profile_box.classList.add("active")
@@ -171,6 +185,7 @@
                             location.href = '../index.php';
                         }
                         student_profile_box.innerHTML = this.responseText;
+                        document.querySelector('input[name="student_hidden_id"]').value = id;
                     }
                 };
 
@@ -221,6 +236,40 @@
         })
 
 
+        function getHallTicket(){
+
+            
+        const id = localStorage.getItem('student_id');
+
+        if (id !== '') {
+
+            var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.open("GET", "../controllers/student_hall_ticket.php?id="+id, true);
+            xmlhttp.setRequestHeader('Content-type','x-www-form-urlencoded')
+
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    if(this.responseText === "err"){
+                        location.href = '../index.php';
+                    }
+                    
+                    if  ( Number(this.responseText)  > 70) {
+                        document.getElementById('downloadPdf').classList.add('active');
+                    }else{
+                        document.getElementById('downloadPdf').classList.remove('active');
+                    }
+                }
+            };
+
+            xmlhttp.send();
+        }else{
+
+            window.location.reload();
+        }
+}
+
+getHallTicket()
     </script>
 
 </body>
