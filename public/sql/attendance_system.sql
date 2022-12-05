@@ -58,7 +58,7 @@ CREATE TABLE `attendance` (
   `status` varchar(45) NOT NULL,
   `attendance_date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +67,7 @@ CREATE TABLE `attendance` (
 
 LOCK TABLES `attendance` WRITE;
 /*!40000 ALTER TABLE `attendance` DISABLE KEYS */;
-INSERT INTO `attendance` VALUES (1,1,3,'present','2022-12-02'),(2,3,3,'absent','2022-12-02'),(3,5,3,'half_day','2022-12-02'),(4,4,3,'late','2022-12-02'),(5,1,3,'late','2022-12-03'),(6,3,3,'late','2022-12-03'),(7,4,3,'present','2022-12-03'),(8,5,3,'half_day','2022-12-03'),(9,6,3,'absent','2022-12-03'),(10,9,3,'absent','2022-12-03'),(11,11,2,'present','2022-12-04');
+INSERT INTO `attendance` VALUES (1,6,3,'present','2022-11-01'),(2,7,3,'present','2022-11-01'),(3,7,3,'present','2022-12-06'),(4,7,3,'present','2022-11-02'),(5,7,3,'absent','2022-11-03'),(6,7,3,'late','2022-11-04'),(7,7,3,'absent','2022-11-05'),(8,7,3,'absent','2022-11-08'),(9,7,3,'half_day','2022-11-09'),(10,7,3,'half_day','2022-11-10'),(11,7,3,'present','2022-11-11'),(12,7,3,'present','2022-11-12'),(13,7,3,'present','2022-11-13'),(14,7,3,'present','2022-11-14'),(15,7,3,'present','2022-11-15'),(16,7,3,'present','2022-11-16'),(17,7,3,'present','2022-11-17'),(18,7,3,'present','2022-11-18'),(19,7,3,'present','2022-11-21'),(20,7,3,'present','2022-11-22'),(21,7,3,'present','2022-11-23'),(22,7,3,'present','2022-11-24'),(23,6,3,'present','2022-11-01'),(24,6,3,'present','2022-11-02'),(25,6,3,'present','2022-11-03'),(26,6,3,'present','2022-11-04'),(27,6,3,'present','2022-11-07'),(28,6,3,'late','2022-11-08'),(29,6,3,'half_day','2022-11-09'),(30,6,3,'absent','2022-11-10'),(31,6,3,'absent','2022-11-11'),(32,6,3,'half_day','2022-11-14'),(33,6,3,'half_day','2022-11-15'),(34,6,3,'present','2022-11-16'),(35,6,3,'absent','2022-11-16'),(36,6,3,'half_day','2022-11-17'),(37,6,3,'present','2022-11-18'),(38,6,3,'absent','2022-11-21'),(39,1,3,'absent','2022-11-02'),(40,1,3,'absent','2022-11-03'),(41,1,3,'present','2022-11-03'),(42,1,3,'present','2022-11-07'),(43,1,3,'present','2022-11-08'),(44,1,3,'present','2022-11-09'),(45,1,3,'present','2022-11-10'),(46,1,3,'absent','2022-11-10'),(47,1,3,'late','2022-11-11'),(48,1,3,'late','2022-11-14'),(49,1,3,'absent','2022-11-15'),(50,1,3,'half_day','2022-11-16'),(51,1,3,'half_day','2022-11-18'),(52,1,3,'present','2022-11-17'),(53,1,3,'absent','2022-11-21'),(54,13,2,'present','2022-11-01'),(55,13,2,'present','2022-11-02'),(56,13,2,'present','2022-11-03'),(57,13,2,'present','2022-11-04'),(58,13,2,'absent','2022-11-07'),(59,13,2,'absent','2022-11-10'),(60,13,2,'late','2022-11-08'),(61,13,2,'half_day','2022-11-09'),(62,13,2,'present','2022-11-11'),(63,13,2,'present','2022-11-14'),(64,13,2,'present','2022-11-15'),(65,13,2,'late','2022-11-16'),(66,13,2,'absent','2022-11-17'),(67,13,2,'absent','2022-11-18'),(68,13,2,'present','2022-11-21'),(69,6,3,'late','2022-11-22');
 /*!40000 ALTER TABLE `attendance` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -167,4 +167,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-04  1:22:56
+-- Dump completed on 2022-12-06  1:25:48
