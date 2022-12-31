@@ -1,8 +1,8 @@
 <?php
 
-    $DB_HOST = "localhost";
+    $DB_HOST = "localhost:3306";
     $DB_USERNAME = "root";
-    $DB_PASSWORD = "root";
+    $DB_PASSWORD = "vishwanath";
     $DB_NAME = "attendance_system";
 
     $conn = mysqli_connect(

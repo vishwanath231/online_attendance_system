@@ -179,8 +179,7 @@
 
                 xmlhttp.send();
             }else{
-                window.location.reload();
-
+                location.href = '../index.php';
             }
         }
 
